@@ -19,3 +19,4 @@ class UsersController < ApplicationController
                                  :password_confirmation)
   end
 end
+
