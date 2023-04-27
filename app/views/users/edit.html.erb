@@ -1,0 +1,9 @@
+<h2>マイページ編集</h2>
+<%= form_with(model: @user, local: true) do |form| %>
+  <%= form.text_field :name, placeholder:"名前"  %>
+  <%= form.email_field :email, placeholder:"メールアドレス"  %>
+  <%= form.password_field :password, placeholder:"パスワード" %>
+  <%= form.password_field :password_confirmation, placeholder:"パスワード(再確認)" %>
+  <%= form.submit "編集する" %>
+<% end %>
+<%= link_to "マイページに戻る", user_path %>
