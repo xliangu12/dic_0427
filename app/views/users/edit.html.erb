@@ -1,21 +1,9 @@
 <h2>マイページ編集</h2>
 <%= form_with(model: @user, local: true) do |form| %>
-<%= form.text_field :name, placeholder:"名前"  %>
-<%= form.email_field :email, placeholder:"メールアドレス"  %>
-<%= form.password_field :password, placeholder:"パスワード" %>
+  <%= form.text_field :name, placeholder:"名前"  %>
+  <%= form.email_field :email, placeholder:"メールアドレス"  %>
+  <%= form.password_field :password, placeholder:"パスワード" %>
+  <%= form.password_field :password_confirmation, placeholder:"パスワード(再確認)" %>
+  <%= form.submit "編集する" %>
 <% end %>
-
-<% if @user.errors.any? %>
-  <div class="form-error-message">
-    <h5>以下のエラーがあります。</h5>
-    <div id="error_explanation">
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-<% end %>
-
 <%= link_to "マイページに戻る", user_path %>
